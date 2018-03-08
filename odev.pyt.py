@@ -25,15 +25,17 @@ def oeeHesapla():
     b=int(input("Üretim miktarını giriniz:"))
     c=int(input("Sağlam ürün miktarını giriniz:"))
     d=int(input("Toplam üretim miktarını giriniz:"))
+    oran=1
     kullanilabilirlik=(x-y)/x
     if x!=y:
         performans=(a*b)/(x-y)
-	kalite=(c/d)
-    	o=1
-    	OEE=kullanilabilirlik*performans*kalite*o
-    	print("%",OEE)
+        kalite=(c/d)
+        oee=kullanilabilirlik*performans*kalite*oran
+        print("%",oee)
     else:
-        print("Üretim süresi ile duruş süresi aynı olmaz.")
+        print("Üretim süresi ile duruş süresi aynı olamaz.")
+    
+
     
 
 
