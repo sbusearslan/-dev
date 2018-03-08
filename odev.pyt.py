@@ -1,22 +1,4 @@
 ##1. Soru	
-def oeeHesapla():
-    x=int(input("Planlanmış üretim süresini giriniz:"))
-    y=int(input("Plansız duruşu girniz:"))
-    a=int(input("Standart çevrim zamanını giriniz:"))
-    b=int(input("Üretim miktarını giriniz:"))
-    c=int(input("Sağlam ürün miktarını giriniz:"))
-    d=int(input("Toplam üretim miktarını giriniz:"))
-    kullanilabilirlik=(x-y)/x
-    if x!=y:
-        performans=(a*b)/(x-y)
-    else:
-        print("Üretim süresi ile duruş süresi aynı olmaz.")
-    kalite=(c/d)
-    o=1
-    OEE=kullanilabilirlik*performans*kalite*o
-    print("%",OEE)
-
-#2.Soru
 def karHesapla():
     x=int(input("Finansman gelirlerini giriniz:"))
     y=int(input("Pazar gelirlerini giriniz:"))
@@ -34,6 +16,25 @@ def karHesapla():
     else:
         print("Şirket zarar sağlamıştır.")
     return kar
+
+#2.Soru
+def oeeHesapla():
+    x=int(input("Planlanmış üretim süresini giriniz:"))
+    y=int(input("Plansız duruşu girniz:"))
+    a=int(input("Standart çevrim zamanını giriniz:"))
+    b=int(input("Üretim miktarını giriniz:"))
+    c=int(input("Sağlam ürün miktarını giriniz:"))
+    d=int(input("Toplam üretim miktarını giriniz:"))
+    kullanilabilirlik=(x-y)/x
+    if x!=y:
+        performans=(a*b)/(x-y)
+	kalite=(c/d)
+    	o=1
+    	OEE=kullanilabilirlik*performans*kalite*o
+    	print("%",OEE)
+    else:
+        print("Üretim süresi ile duruş süresi aynı olmaz.")
+    
 
 
 ##3.Soru
