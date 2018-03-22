@@ -2,7 +2,7 @@
 
 satisMiktari=500
 birimSatisMiktari=20
-i=1
+i=0
 while True:
     satisMiktari=satisMiktari+200
     birimSatisMiktari=birimSatisMiktari+10
