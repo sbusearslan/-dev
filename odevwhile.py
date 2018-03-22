@@ -67,13 +67,14 @@ while True:
 
 
 pantolon=200
-i=1
+i=0
 x=''
 while True:
     x=int(input("Günlük defolu ürün sayısını giriniz:"))
-    if(x>200/5):
-          print("Dikkat!Çok fazla defolu ürün bulunuyor.")
+    i=i+1
+    if(x<200/5):
+        print(i,"günlük",x,"defolu ürün bulunuyor.")
     else:
-          print(i,"günlük",x,"defolu ürün bulunuyor.")
-          i=i+1
-        
+        print("Dikkat!Çok fazla defolu ürün bulunuyor.")
+        break  
+#üretilen pantolonun %20si 200/5'tir.
