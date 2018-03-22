@@ -18,7 +18,7 @@ while True:
 stokMiktari=10000
 satisMiktari=500
 alisMiktari=100
-i=1
+i=0
 while True:
     stokMiktari=stokMiktari-satisMiktari+alisMiktari
     i=i+1
