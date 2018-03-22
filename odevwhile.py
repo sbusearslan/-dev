@@ -48,16 +48,19 @@ while(a!=0):
 y=2520 #Haftanın 7 günü çalışacaklar.1 ay=4 hafta 4*7*90
 x=''
 while True:
-    x=int(input("Haftalık mesai saatiniz:"))
-    if (0<x<22):
-        y=(y+x*9*4)*50
-        print("Aylık maaşınız:",y,"TL'dir.")
-    elif(x==0):
+    x=int(input("1. haftadaki mesai saatiniz:"))
+    k=int(input("2. haftadaki mesai saatiniz:"))
+    z=int(input("3. haftadaki mesai saatiniz:"))
+    t=int(input("4. haftadaki mesai saatiniz:"))
+    if (0<(x+k+z+t)<22):
+        y=(y+(x+k+z+t)*9*4)*50
+        print("Aylık maaşınız",y,"TL'dir.")
+    elif((x+k+z+t)==0):
         print("Aylık maaşınız 126.000 TL'dir.")
     else:
         print("Aylık maaşınız hesaplanamaz.")
-        
-    
+
+ 
         
 55555555555555555555555555555555555555555
 
