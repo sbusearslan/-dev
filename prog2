@@ -1,0 +1,52 @@
+#222222222222222222222222222222222222222222222222222222222222222222222222222
+
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+class maliyetHesaplama(QDialog):
+    def __init__(self,ebeveyn=None):
+        super(maliyetHesaplama,self).__init__(ebeveyn)
+#Grid Layout Tanımlandı
+        grid=QGridLayout()
+#Sabit Maliyet Label Eklendi
+        grid.addWidget(QLabel("Toplam İşten Ayrılan Personel Sayısı:"),0,0)
+#Sabit Maliyet Text Input Tanımlandı ve eklendi
+        self.cikPerSayi=QLineEdit()
+        grid.addWidget(self.cikPerSayi,0,1)
+#Değişken Maliyet Label Eklendi
+        grid.addWidget(QLabel("Aylık Çalışan Sayısı Toplamı:"),1,0)
+#Değişken Maliyet Text Input Tanımlandı ve eklendi
+        self.aylikCaSayi=QLineEdit()
+        grid.addWidget(self.aylikCaSayi,1,1)
+#Yatırımın ekonomik yılı Label Eklendi
+        grid.addWidget(QLabel("Hesaplanmak İstenilen Ay:"),2,0)
+#Yatırım Yılı Döner Kutusu eklendi
+        self.ay=QSpinBox()
+        self.ay.setRange(1,10)
+        self.ay.setValue(1)
+        grid.addWidget(self.ay,2,1)
+#Toplam Gider Label eklendi
+        grid.addWidget(QLabel("Turn Over Sonuç:"),3,0)
+#Toplam Gider Input eklendi
+        self.ortCalisan=QLabel("")
+        grid.addWidget(self.ortCalisan,3,1)
+#Hesapla Butonu eklendi
+        hesaplaDugme=QPushButton("Hesapla")
+        grid.addWidget(hesaplaDugme,5,1)
+        self.connect(hesaplaDugme,SIGNAL('pressed()'),self.hesapla)
+#Grid Layout set edildi
+        self.setLayout(grid)
+#Dialog penceresinin başlığı eklendi
+        self.setWindowTitle("Turn Over")
+        self.resize(250,150)
+    def hesapla(self):
+        isAyPer=int(self.cikPerSayi.text())
+        ayCalisan=int(self.aylikCaSayi.text())
+        aylar=int(self.ay.text())
+        ort=ayCalisan/aylar
+        turnOver=isAyPer/ort*100
+        self.ortCalisan.setText('<font color="blue"><b>%0.1f</b></font>'%turnOver)
+        
+uygulama=QApplication([])
+pencere=maliyetHesaplama()
+pencere.show()
+uygulama.exec_
